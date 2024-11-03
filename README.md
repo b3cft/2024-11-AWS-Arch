@@ -1,7 +1,7 @@
 
 ## Architecture Overview
 
-![Architecture Overview](./Overview.md)
+![Architecture Overview](./Overview.png)
 
 ## Initial Considerations
 
@@ -20,7 +20,7 @@ This would still allow centralised management and billing under AWS Organisation
 
 The Architecture should be split into regions, each region hosting a Transit Gateway and one or more VPC.
 
-![Region Overview](./AWSRegion.md)
+![Region Overview](./AWSRegion.png)
 ### Transit Gateways
 One region should be nominated as the primary region, closest geographically to the existing on-premise data centre.
 This region should use AWS Direct Connect to peer with the Transit Gateway for that region.
@@ -74,7 +74,7 @@ For services that don't automatically failover between regions, such as Aurora G
 
 This lambda could also be used to supress further health checks for a period to prevent failbacks until relevant teams have investigated. 
 
-![Region Failover](./RegionFailover.md)
+![Region Failover](./RegionFailover.png)
 ## Route 53 Local Zones
 
 AWS Route53 supports usage of a local VPC Zones, which allow the overriding of a public hosted record to an internal VPC address.
